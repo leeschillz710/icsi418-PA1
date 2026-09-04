@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>  
+<head>
+    <title>What's on Your Plate?</title>  
+</head>
+<body>
+    <h1>Welcome to What's on Your Plate?</h1>
+    <p>Task Selection</p>
+    <form id="task-form">
+        <!-- Task Entry Station-->
+         <div class = "task-entry">
+
+            <!-- Task Description -->
+            <Label for ="task-input">Task</Label>
+            <input
+                type="text"
+                id="task-input"
+                name="task"
+                placeholder="Enter your task here"
+                required
+            />
+
+            <!--Priority Selector-->
+            <label for="priority-input">Priority</label>
+            <select id="priority-input" name="priority" required>
+                <option value="">Select a priority</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit">Add Task</button>
+
+         </div>
+    </form>>
+    
+    <!-- Empty Area Where Tasks Will Be Displayed -->
+    <div id="task-list"></div>
+
+    <!--Load JavaScript-->
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
