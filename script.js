@@ -26,7 +26,7 @@ function displayTasks() {
     taskList.innerHTML = '';
 
     // repeat these steps for every task
-    tasks.forEach(function(task) {
+    tasks.forEach(function(task, index) {
         // create a new row to hold task data
         const taskRow = document.createElement('div');
 
@@ -55,13 +55,19 @@ function displayTasks() {
             task.completed = true;
             displayTasks();
         }
-);
+
+        );
     
 
         // Create a Delete button
         const deleteButton = document.createElement('button');
         deleteButton.type = "button";
         deleteButton.textContent = 'Delete';
+        // remove this task when its button is clicked
+        deleteButton.addEventListener('click', function() {
+            tasks.splice(index, 1);
+            displayTasks();
+        });
         
         // put everything into this task's row
         taskRow.append(
