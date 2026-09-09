@@ -13,9 +13,9 @@ const taskList = document.querySelector('#task-list');
 
 /* array to hold the tasks */
 const tasks = [
-    { name: "Task 1", priority: "High" },
-    { name: "Task 2", priority: "Medium" },
-    { name: "Task 3", priority: "Low" }
+    { name: "Task 1", priority: "High", completed: false },
+    { name: "Task 2", priority: "Medium", completed: false },
+    { name: "Task 3", priority: "Low", completed: false }
 ];
 
 
@@ -43,6 +43,20 @@ function displayTasks() {
         const completeButton = document.createElement('button');
         completeButton.textContent = 'Complete';
         completeButton.type = "button";
+        // Show whether this task is complete or not
+        if (task.completed) {
+            taskName.style.textDecoration = 'line-through';
+            taskPriority.style.textDecoration = 'line-through';
+            completeButton.textContent = 'Completed';
+            completeButton.disabled = true;
+        }
+        // run whne this button is clicked
+        completeButton.addEventListener('click', function() {
+            task.completed = true;
+            displayTasks();
+        }
+);
+    
 
         // Create a Delete button
         const deleteButton = document.createElement('button');
