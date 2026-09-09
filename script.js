@@ -12,11 +12,7 @@ const prioritySelector = document.querySelector('#priority-input');
 const taskList = document.querySelector('#task-list');
 
 /* array to hold the tasks */
-const tasks = [
-    { name: "Task 1", priority: "High", completed: false },
-    { name: "Task 2", priority: "Medium", completed: false },
-    { name: "Task 3", priority: "Low", completed: false }
-];
+const tasks = [];
 
 
 
@@ -84,3 +80,42 @@ function displayTasks() {
 
 // Run the function to display the current tasks.
 displayTasks();
+
+// Listen for the form submission
+form.addEventListener('submit', function(event) {
+    // prevent the page from refreshing
+    event.preventDefault();
+
+    // Read inputs and remove extra spaced from name
+    const taskName = taskInput.value.trim();
+    const taskPriority = prioritySelector.value;
+
+    // reject empty task names, including only spaces
+    if (taskName === '') {
+        alert('Task name cannot be empty.');
+        taskInput.focus();
+        return;
+    }
+
+    //make sure a priority is selected
+    if (taskPriority === '') {
+        alert('Please select a priority.');
+        prioritySelector.focus();
+        return;
+    }
+
+    // create a new, uncompleted task object
+    const newTask = {
+        name: taskName,
+        priority: taskPriority,
+        completed: false
+    };
+
+    //store the trask and update the page
+    tasks.push(newTask);
+    displayTasks();
+
+    // prepare the form for the next task
+    form.reset();
+    taskInput.focus();
+});
