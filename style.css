@@ -23,7 +23,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Form controls: give inputs/select/button spacing */
+/* give inputs/select/button spacing */
 input, select, button {
     margin: 5px 0;
     padding: 5px;
@@ -31,8 +31,8 @@ input, select, button {
     box-sizing: border-box;
 }
 
-/* Take list area: give the area space above the form */
-#take-list {
+/*  give the area space above the form */
+#task-list {
     margin-top: 20px;
 }
 
