@@ -1,0 +1,38 @@
+
+
+/* change body font, and add spacing around the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+
+/* Make heading distinct, add spacing */
+h1 {
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* .task-entry: add padding, give border, add background color, and round corners */
+.task-entry {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Form controls: give inputs/select/button spacing */
+input, select, button {
+    margin: 5px 0;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Take list area: give the area space above the form */
+#take-list {
+    margin-top: 20px;
+}
+
