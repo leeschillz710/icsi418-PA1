@@ -36,3 +36,15 @@ input, select, button {
     margin-top: 20px;
 }
 
+/* priority colors */
+.high-priority {
+    color: red;
+}
+
+.medium-priority {
+    color: goldenrod;
+}
+
+.low-priority {
+    color: green;
+}

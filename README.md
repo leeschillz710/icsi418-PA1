@@ -1,36 +1,19 @@
-# icsi418-PA1
-A small interactive web application
+# Task Manager
 
-A small task management page
-The user is able to:
-    1. Enter the name of a task.
-    2. Select a priority for the task.
-    3. Add the task to the page
-    4. mark a task as complete
-    5. delete a task
+## Name
+Leigha Schilling
 
-Tasks are not saved after the page is refreshed
+## Description
+Task Manager is a web application that allows users to create and organize tasks. Users can enter a task, select its priority level, and add it to the task list. The application uses HTML for the page structure, CSS for styling, and JavaScript for the applications functionality.
 
+## How to Run the Program
+1. Download or clone the project repository from GitHub.
+2. Open the 'isci418-PA1' folder.
+3. Open 'index.html' in a web browser.
+4. Use the task form to enter a task and select its priority.
+5. Click the Add Task button to add the task to the task list.
 
-HTML:
-- A page title or heading
-- A form for entering a new task
-- A text input for the task name
-- A priority selection
-- An add task button
-- An area where tasks will be displayed
+No additional software or installation is required to run the application other than a modern web browser.
 
-Priorities can be input as:
-    - Low
-    - Medium
-    - High
-
-The HTML file loads both CSS and JavaScript files.
-
-"style.css" is used to make app organized and readable
-The stylesheet demonstrates:
-    - At least one element selector
-    - At least one class selector
-    - Margin and/or padding
-    - Border or background styling
-    - A visually different appearance for completing tasks
+## Known Problems or Incomplete Features
+There are currently no known problems with the completed features of the application.

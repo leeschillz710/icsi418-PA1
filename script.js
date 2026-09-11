@@ -23,22 +23,32 @@ function displayTasks() {
 
     // repeat these steps for every task
     tasks.forEach(function(task, index) {
-        // create a new row to hold task data
-        const taskRow = document.createElement('div');
+    // create a new row to hold task data
+    const taskRow = document.createElement('div');
 
-        // Show its name
-        const taskName = document.createElement('span');
-        taskName.textContent = task.name;
+    // Show its name
+    const taskName = document.createElement('span');
+    taskName.textContent = task.name;
 
-        // Show its priority
-        const taskPriority = document.createElement('span');
-        taskPriority.textContent = " -- Priority: " + task.priority + " ";
+    // Show its priority
+    const taskPriority = document.createElement('span');
+    taskPriority.textContent = " -- Priority: " + task.priority + " ";
+        
+        // priority color
+        if (task.priority === 'high') {
+            taskPriority.classList.add('high-priority');
+        } else if (task.priority === 'medium') {
+            taskPriority.classList.add('medium-priority');
+        } else if (task.priority === 'low') {
+            taskPriority.classList.add('low-priority');
+        }
 
 
-        // Create a Complete button
-        const completeButton = document.createElement('button');
-        completeButton.textContent = 'Complete';
-        completeButton.type = "button";
+    // Create a Complete button
+    const completeButton = document.createElement('button');
+    completeButton.textContent = 'Complete';
+    completeButton.type = "button";
+
         // Show whether this task is complete or not
         if (task.completed) {
             taskName.style.textDecoration = 'line-through';
@@ -46,40 +56,43 @@ function displayTasks() {
             completeButton.textContent = 'Completed';
             completeButton.disabled = true;
         }
-        // run whne this button is clicked
-        completeButton.addEventListener('click', function() {
-            task.completed = true;
-            displayTasks();
-        }
+     // run whne this button is clicked
+    completeButton.addEventListener('click', function() {
+        task.completed = true;
+        displayTasks();
+    }
 
-        );
+    );
     
 
-        // Create a Delete button
-        const deleteButton = document.createElement('button');
-        deleteButton.type = "button";
-        deleteButton.textContent = 'Delete';
-        // remove this task when its button is clicked
-        deleteButton.addEventListener('click', function() {
-            tasks.splice(index, 1);
-            displayTasks();
-        });
+    // Create a Delete button
+    const deleteButton = document.createElement('button');
+    deleteButton.type = "button";
+    deleteButton.textContent = 'Delete';
+
+    // remove this task when its button is clicked
+    deleteButton.addEventListener('click', function() {
+        tasks.splice(index, 1);
+        displayTasks();
+     });
         
-        // put everything into this task's row
-        taskRow.append(
-            taskName,
-            taskPriority,
-            completeButton,
-            deleteButton
-        );
+    // put everything into this task's row
+    taskRow.append(
+        taskName,
+        taskPriority,
+        completeButton,
+        deleteButton
+    );
        
-        // put finished row on the page
-        taskList.appendChild(taskRow);
+    // put finished row on the page
+    taskList.appendChild(taskRow);
+
     })
 }
 
 // Run the function to display the current tasks.
 displayTasks();
+
 
 // Listen for the form submission
 form.addEventListener('submit', function(event) {
@@ -97,7 +110,7 @@ form.addEventListener('submit', function(event) {
         return;
     }
 
-    //make sure a priority is selected
+    // make sure a priority is selected
     if (taskPriority === '') {
         alert('Please select a priority.');
         prioritySelector.focus();
@@ -111,11 +124,13 @@ form.addEventListener('submit', function(event) {
         completed: false
     };
 
-    //store the trask and update the page
+    // store the task and update the page
     tasks.push(newTask);
     displayTasks();
 
     // prepare the form for the next task
     form.reset();
     taskInput.focus();
-});
+
+ 
+ });
